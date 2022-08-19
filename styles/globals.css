@@ -24,3 +24,11 @@ a {
     background: black;
   }
 }
+
+:root {
+  --color-bgblack : #000;
+  --color-accent-1 : #111;
+  --color-accent-2 : #333;
+  --color-accent-3 : #7F8487
+}
+
