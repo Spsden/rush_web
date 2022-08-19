@@ -1,4 +1,41 @@
 .appname {
-    size: 20rem;
+   margin: 15px;
 
+}
+
+
+.nav {
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: space-between;
+
+}
+
+/* .cartbox {
+    display: flex;
+    flex-direction: row;
+    background-color: 0070F3#;
+    border-radius: 8px;
+    padding: 5px;
+    height: auto;
+   
+    
+} */
+/* .cartParent {
+    display: flex;
+    align-items: center;
+    border-radius: 2vh;
+    margir
+} */
+.cartBtn {
+    margin: 2vh
+}
+
+.cartText {
+    margin: 0 1vh
+    
+}
+.textInput {
+    color: "#fff";
+    
 }

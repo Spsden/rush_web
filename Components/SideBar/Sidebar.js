@@ -6,10 +6,10 @@ import { SidebarData } from "./SidebarData";
 function Sidebar() {
   return (
     <div>
-
+{/* 
 <div className= {styles.rushname}>
       Rush
-    </div>
+    </div> */}
       <div className={styles.sidebar}>
         <ul className={styles.sidebarlist}>
           {SidebarData.map((val, key) => {
