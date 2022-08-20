@@ -6,10 +6,35 @@ import styles from '../styles/Homepage.module.css'
 function Homepage() {
   return (
     <div className= {styles.App}>
-        <Navbar/>
+        <Navbar className = {styles.Navbar}/>
+
+        <Sidebar className = {styles.sidebar}/>
+
+        <div className= {styles.belownav}>
+          <h1>Hellow</h1>
+          <h1>Hellow</h1>
+          <h1>Hellow</h1>
+          <h1>Hellow</h1>
+          <h1>Hellow</h1>
+          <h1>Hellow</h1>
+          <h1>Hellow</h1>
+          <h1>Hellow</h1>
+          <h1>Hellow</h1>
+          <h1>Hellow</h1>
+          <h1>Hellow</h1>
+          <h1>Hellow</h1>
+          <h1>Hellow</h1>
+          <h1>Hellow</h1>
+          <h1>Hellow</h1>
+          <h1>Hellow</h1>
+          <h1>Hellow</h1>
+          <h1>Hellow</h1>
+
+       
+        </div>
       
 
-        <Sidebar/>
+        
 
     </div>
   )

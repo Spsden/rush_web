@@ -1,5 +1,9 @@
 .sidebar {
 
+    position: fixed;
+    top: 80px;
+    
+
     height: 100vh;
     width: 250px;
     background-color: var(--color-accent-1);

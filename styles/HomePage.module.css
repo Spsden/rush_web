@@ -38,14 +38,32 @@
 } */
 
 .App{
+
     width: 100vw;
     height: 100vh;
+    
     background-color: var(--color-bgblack);
   }
+
+  .Navbar {
+    background-color: red;
+    display: flex;
+    flex-direction: row;
+  }
   
-  .body {
+  /* .body {
     margin: 0;
     padding: 0;
   
+  } */
+
+  .belownav {
+    margin-top: 8vh;
+    position: absolute;
+    left: 250px ;
+
+    
   }
-  
+
+ 
+

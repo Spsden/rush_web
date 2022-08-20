@@ -5,12 +5,13 @@ import { Input, Button } from "@nextui-org/react";
 
 function Navbar() {
   return (
-    <div className={styles.nav}>
+    <div className={styles.navy}>
       <h1 className={styles.appname}>Rush</h1>
       {/* <SearchBar /> */}
       <Input
         width="40vw"
-        color="warning"
+        color="$blue800"
+        
         labelLeft="Search"
         style={{  fontSize: 17, padding: 20 }}
         
