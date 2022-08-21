@@ -1,15 +1,12 @@
-.appname {
-   margin: 15px;
 
-}
 
 
 
 .navy {
 
-    position: sticky;
+    position: fixed;
     top: 0;
-    align-items: center;
+    
     background-color:  rgba(0, 0, 0, 0.61);
     backdrop-filter: blur(5px);
   
@@ -40,6 +37,7 @@
 } */
 .cartBtn {
     margin: 2vh
+    
 }
 
 .cartText {
