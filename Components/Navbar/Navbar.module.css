@@ -1,0 +1,52 @@
+.appname {
+   margin: 15px;
+
+}
+
+
+
+.navy {
+
+    position: sticky;
+    top: 0;
+    align-items: center;
+    background-color:  rgba(0, 0, 0, 0.61);
+    backdrop-filter: blur(5px);
+  
+   
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+   
+
+}
+
+
+/* .cartbox {
+    display: flex;
+    flex-direction: row;
+    background-color: 0070F3#;
+    border-radius: 8px;
+    padding: 5px;
+    height: auto;
+   
+    
+} */
+/* .cartParent {
+    display: flex;
+    align-items: center;
+    border-radius: 2vh;
+    margir
+} */
+.cartBtn {
+    margin: 2vh
+}
+
+.cartText {
+    margin: 0 1vh
+    
+}
+.textInput {
+    
+    
+}
