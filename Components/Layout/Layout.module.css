@@ -37,29 +37,24 @@
   }
 } */
 
-
 .sheet {
   display: flex;
-  
 }
 
-.app{
-    /* 
-        width: 100vw;
-        height: 100vh; */
-        display: flex;
-        
-        background-color: var(--color-bgblack);
-      }
-    
-    
-      
-      /* .body {
+.app {
+  
+  display: flex;
+  flex-direction: row;
+
+  background-color: var(--color-bgblack);
+}
+
+/* .body {
         margin: 0;
         padding: 0;
       
       } */
-    /* 
+/* 
       .belownav {
         margin-top: 8vh;
         position: absolute;
@@ -67,22 +62,17 @@
     
         
       } */
-    
-      .leftbar {
-        flex: 1;
-        position: sticky;
-       
-        
-      }
-    
-      
-    
-      .rightbar{
-        flex: 7;
-        margin: 10px;
-        padding: 10px;
-      }
-    
-     
-    
-    
+
+.leftbar {
+  width: 200px;
+
+  
+  /* position: sticky; */
+}
+
+.rightbar {
+  flex-grow: 1;
+
+  margin: 10px;
+  padding: 10px;
+}
