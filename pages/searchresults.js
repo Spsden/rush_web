@@ -2,8 +2,9 @@ import React, { useContext, useEffect, useState } from "react";
 //import {withRouter} from 'next/router'
 import { useRouter } from "next/router";
 import axios from "axios";
+import { Layout } from "react-feather";
 
-function Search(props) {
+export default function Search(props) {
   const router = useRouter();
   console.log(router.query);
 
@@ -35,12 +36,28 @@ function Search(props) {
       });
   }, [router.query.squery]);
 
-  return (<div>
-   { res}
+  return (
+    
+         <div>
+    <h2>sdufgdsfysdgfdsuhg</h2>
     
   </div>
+
+  
+ 
 
   );
 }
 
-export default Search;
+// Search.getLayout = function getLayout(page){
+//     return (
+//         <Layout>
+//             <h2>uieghciyxghiuzgc8tuyc</h2>
+//             {page}
+//         </Layout>
+//     )
+// }
+
+
+
+
