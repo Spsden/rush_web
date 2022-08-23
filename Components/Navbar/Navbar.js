@@ -20,9 +20,9 @@ function Navbar() {
 
   return (
     <div className={styles.navy}>
-      {/* <SearchBar /> */}
+      <SearchBar/>
       
-      <Input
+      {/* <Input
         width="40vw"
         color="$blue800"
         labelLeft="Search"
@@ -38,7 +38,7 @@ function Navbar() {
           pathname: '/searchresults',
           query : {squery : query}
         },)}
-      />
+      /> */}
 
      
 
