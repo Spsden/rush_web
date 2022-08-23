@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import React from "react";
+
 import Sidebar from "../SideBar/Sidebar"
 
 import Navbar from "../Navbar/Navbar";

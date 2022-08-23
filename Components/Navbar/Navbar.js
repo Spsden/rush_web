@@ -3,13 +3,25 @@ import SearchBar from "../SearchBar/SearchBar";
 import styles from "./Navbar.module.css";
 import { Input, Button } from "@nextui-org/react";
 import { useRouter } from "next/router";
+import { createContext, useContext, useEffect, useState } from "react";
+
+
 
 function Navbar() {
 
   const router = useRouter();
+  const [query,setQuery] = useState('')
+
+  useEffect(() => {
+    console.log(query);
+    
+  },[query])
+
+
   return (
     <div className={styles.navy}>
       {/* <SearchBar /> */}
+      
       <Input
         width="40vw"
         color="$blue800"
@@ -18,8 +30,17 @@ function Navbar() {
         className={styles.textInput}
         placeholder="Enter app name"
         required
-        onFocus={() => router.push('/searchresults')}
+        value={query}
+        
+        
+        onChange={e=> setQuery(e.target.value) }
+        onFocus={(e) => router.push({
+          pathname: '/searchresults',
+          query : {squery : query}
+        },)}
       />
+
+     
 
       <Button
         auto
@@ -34,3 +55,4 @@ function Navbar() {
 }
 
 export default Navbar;
+
