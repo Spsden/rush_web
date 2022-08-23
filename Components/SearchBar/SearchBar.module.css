@@ -10,9 +10,13 @@
 
 }
 
+.form {
+    width: 50%;
+}
+
 .input {
 
-    width: 50%;
+    width: 100%;
     border: 0px;
     border-right: none;
     padding: 5px;
