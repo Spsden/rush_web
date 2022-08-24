@@ -4,42 +4,65 @@ import { useRouter } from "next/router";
 import axios from "axios";
 import { Layout } from "react-feather";
 
-export default function Search(props) {
-  const router = useRouter();
-  console.log(router.query);
+export default function SearchPage(props) {
+   const router = useRouter();
+   const searchQuery = router.query.q;
+   const [isloading,setIsLoading] = useState(false)
+   const url = `https://rushy-spsden.vercel.app/rush/app/${searchQuery}`;
+   let allData = [];
 
-  //const contextReceive = useContext(TransferQuery);
-  const url = "https://rushy-spsden.vercel.app/rush/app/";
-  const wel = "https://welkin-search-api.vercel.app/search/movies";
 
-  const [res, setResponse] = useState(null);
+  console.log(router.query.result);
 
-  useEffect(() => {
-    axios
-      .get(url + "whatsapp", {})
-      .then((response) => {
-       
-        setResponse(response.data[0].icon_url);
-        console.log( response.data[0]);
-      })
+   async function fetchData(qquery) {
+
+    const data = await axios
+      .get(url , {})
+      .then((response) => response.data)
       .catch((error) => {
         if (error.response) {
-          //response status is an error code
           console.log(error.response.status);
         } else if (error.request) {
-          //response not received though the request was sent
           console.log(error.request);
         } else {
-          //an error occurred when setting up the request
           console.log(error.message);
         }
       });
-  }, [router.query.squery]);
+
+    // setResponse(data);
+    
+     allData = data;
+     console.log(allData);
+  }
+
+
+  useEffect(() => {
+   // setIsLoading(true);
+    fetchData()
+
+  },[router.query])
 
   return (
     
          <div>
-    <h2>sdufgdsfysdgfdsuhg</h2>
+          <h1>{router.query.q}</h1>
+   
+   <h1>Hommmme</h1>
+        <h1>Hommmme</h1>
+        <h1>Hommmme</h1>
+        <h1>Hommmme</h1>
+        <h1>Hommmme</h1>
+        <h1>Hommmme</h1>
+        <h1>Hommmme</h1>
+        <h1>Hommmme</h1>
+        <h1>Hommmme</h1>
+        <h1>Hommmme</h1>
+        <h1>Hommmme</h1>
+        <h1>Hommmme</h1>
+        <h1>Hommmme</h1>
+        <h1>Hommmme</h1>
+        <h1>Hommmme</h1>
+        <h1>Hommmme</h1>
     
   </div>
 
