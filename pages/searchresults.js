@@ -1,23 +1,24 @@
 import React, { useContext, useEffect, useState } from "react";
-//import {withRouter} from 'next/router'
+
 import { useRouter } from "next/router";
 import axios from "axios";
-import { Layout } from "react-feather";
+import { Grid } from "@nextui-org/react";
+import AppCard from "../Components/AppCard/AppCard";
+
 
 export default function SearchPage(props) {
-   const router = useRouter();
-   const searchQuery = router.query.q;
-   const [isloading,setIsLoading] = useState(false)
-   const url = `https://rushy-spsden.vercel.app/rush/app/${searchQuery}`;
-   let allData = [];
+  const router = useRouter();
+  const [res,setRes] = useState([]);
+  const searchQuery = router.query.q;
+  const [isloading, setIsLoading] = useState(false);
+  const url = `https://rushy-spsden.vercel.app/rush/app/${searchQuery}`;
+  let allData = [];
 
+  //console.log(router.query.result);
 
-  console.log(router.query.result);
-
-   async function fetchData(qquery) {
-
+  async function fetchData(qquery) {
     const data = await axios
-      .get(url , {})
+      .get(url, {})
       .then((response) => response.data)
       .catch((error) => {
         if (error.response) {
@@ -30,45 +31,34 @@ export default function SearchPage(props) {
       });
 
     // setResponse(data);
-    
-     allData = data;
-     console.log(allData);
+
+    allData = data;
+    setRes(data);
+    console.log(allData);
   }
 
-
   useEffect(() => {
-   // setIsLoading(true);
-    fetchData()
-
-  },[router.query])
+    // setIsLoading(true);
+    fetchData();
+  }, [router.query]);
 
   return (
-    
-         <div>
-          <h1>{router.query.q}</h1>
-   
-   <h1>Hommmme</h1>
-        <h1>Hommmme</h1>
-        <h1>Hommmme</h1>
-        <h1>Hommmme</h1>
-        <h1>Hommmme</h1>
-        <h1>Hommmme</h1>
-        <h1>Hommmme</h1>
-        <h1>Hommmme</h1>
-        <h1>Hommmme</h1>
-        <h1>Hommmme</h1>
-        <h1>Hommmme</h1>
-        <h1>Hommmme</h1>
-        <h1>Hommmme</h1>
-        <h1>Hommmme</h1>
-        <h1>Hommmme</h1>
-        <h1>Hommmme</h1>
-    
-  </div>
+    <div>
+      <Grid.Container gap={2} justify="center" alignContent="left">
+      {res.map((val,key) => {
+        return(
+          <Grid key={key}>
+            <AppCard  name = {val.name_and_version} icon = {val.icon_url} />
+            
+          </Grid>
+        )
+      })}
 
+    </Grid.Container>
+
+    </div>
+    
   
- 
-
   );
 }
 
@@ -80,7 +70,3 @@ export default function SearchPage(props) {
 //         </Layout>
 //     )
 // }
-
-
-
-
