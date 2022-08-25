@@ -16,7 +16,7 @@ function Sidebar() {
   return (
     
     <div className={styles.sidebar}>
-      <div className={styles.logo}>Rush</div>
+      <div className={styles.rushname}>Rush</div>
 
       <nav>
         {SidebarData.map((val, key) => {
