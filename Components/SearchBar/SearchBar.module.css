@@ -5,15 +5,42 @@
     left:1px;
     display: flex;
     margin: 10px;
+    flex-direction:column;
+    top:4px
+
+
+
+}
+
+.bar{
+    display:flex;
+    width:100%
+}
+
+.suggestionsbar {
+
+    width:93.5%;
+    height:auto;
+    margin-top: 5px;
+   
+    overflow:hidden;
+    background-color:  var(--color-accent-1);
+  
     
 
-
-
 }
 
-.form {
-    width: 50%;
+.suggestionitem{
+    height: 34px;
+    margin:5px;
+    padding-left:5px;
+  display: flex;
+  align-items: center;
+  color: black;
+    background-color: #0071f350;
 }
+
+
 
 .input {
 
