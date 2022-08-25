@@ -2,23 +2,24 @@ import React, { useContext, useEffect, useState } from "react";
 
 import { useRouter } from "next/router";
 import axios from "axios";
-import { Grid } from "@nextui-org/react";
+import { Grid, Loading } from "@nextui-org/react";
 import AppCard from "../Components/AppCard/AppCard";
-import styles from '../styles/searchresults.module.css'
+import styles from "../styles/searchresults.module.css";
 import { Layout } from "../Components/Layout/Layout";
-import { DisplaySection } from "../Components/DisplaySection/DisplaySection";
-import { CustomLayout } from "./_app";
+
 function SearchPage(props) {
   const router = useRouter();
-  const [res,setRes] = useState([]);
+  const [res, setRes] = useState([]);
+  const [isLoading,setLoading] = useState(false);
   const searchQuery = router.query.q;
-  const [isloading, setIsLoading] = useState(false);
+
   const url = `https://rushy-spsden.vercel.app/rush/app/${searchQuery}`;
-  let allData = [];
 
   //console.log(router.query.result);
 
-async function fetchData(qquery) {
+  async function fetchData(qquery) {
+    setLoading(false)
+   
     const data = await axios
       .get(url, {})
       .then((response) => response.data)
@@ -33,55 +34,70 @@ async function fetchData(qquery) {
       });
 
     // setResponse(data);
+    setLoading(true);
 
-    allData = data;
     setRes(data);
-    console.log(allData);
+   
   }
 
   useEffect(() => {
-    // setIsLoading(true);
+    
     fetchData();
+   
   }, [router]);
 
-  return (
-    // <div className= {styles.cards}>
-    //   {res.map((val,key) => {
-    //     return (
-    //       <div className= {styles.card} key = {key}></div>
-    //     )
-    //   })}
-    // </div>
 
+  console.log(isLoading);
 
-
-    
-    <div className= {styles.main}>
-      <h1>You Searched for "{router.query.q}"</h1>
-      <Grid.Container  color="white" gap={2} justify="flex-start" wrap="wrap"  >
-      {res.map((val,key) => {
-        return(
-          <Grid key={key} className = {styles.grid}  >
-            <AppCard  name = {val.name_and_version} icon = {val.icon_url} />
-           
-            
-            
-          </Grid>
-        )
-      })}
-
-    </Grid.Container>
-
-    </div>
-    
+ 
   
-  );
+const result = () => {
+    return (
+      <Grid.Container color="white" gap={2} justify="flex-start" wrap="wrap">
+      {res.map((val, key) => {
+        return (
+          <Grid key={key} className={styles.grid}>
+            <AppCard name={val.name_and_version} icon={val.icon_url} />
+          </Grid>
+        );
+      })}
+    </Grid.Container>
+    )
+  }
+  
+
+
+    return(
+      <div className={styles.main}>
+        
+      <h1>You Searched for "{router.query.q}"</h1>
+
+      {isLoading ? 
+      <Grid.Container color="white" gap={2} justify="flex-start" wrap="wrap">
+      {res ? res.map((val, key) => {
+        return (
+          <Grid key={key} className={styles.grid}>
+            <AppCard name={val.name_and_version} icon={val.icon_url} />
+          </Grid>
+        );
+      }) : <Loading/>}
+    </Grid.Container>
+      
+      : <Loading/>}
+
+      
+      
+    </div>
+
+    )
+  
+
+ 
 }
 
+SearchPage.Layout = Layout;
 
-SearchPage.Layout = Layout
-
-export default SearchPage
+export default SearchPage;
 
 // SearchPage.getLayout = function getLayout(page){
 //   return (<Layout>
