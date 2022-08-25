@@ -6,10 +6,12 @@ import React from "react";
 function AppCard(props) {
   //console.log(props.props.name_version)
   return (
-    <div className={styles.card}>
-      <div className={styles.top}>
+    <div className={styles.maincard}>
+      <div className={styles.subcard}>
         <img className={styles.img} alt="icon" src={props.icon} />
-        <div>{props.name}</div>
+
+        <div className={styles.text}>{props.name}</div>
+        
       </div>
       <div>
         <button className={styles.button}>Add to cart</button>

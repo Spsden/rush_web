@@ -4,24 +4,17 @@ import { useRouter } from "next/router";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import useDebounce from "../Hooks/useDebounce";
-import Link from "next/link";
 
 function SearchBar() {
   const router = useRouter();
+  const [query, setQuery] = useState();
 
   const handleEnterKey = (e) => {
     e.preventDefault();
 
-    if (e.key === "Enter") {
+     if (e.key === "Enter") {
       console.log("pressed");
       const q = e.currentTarget.value;
-
-      // return(
-      //   <Link href= "/searchresults" passHref>
-
-      //   </Link>
-      // )
-
       router.push(
         {
           pathname: `/searchresults`,
@@ -35,6 +28,31 @@ function SearchBar() {
     }
   };
 
+  // const handlebutton =(some)=> {
+
+  //   if(some != ""){
+
+  //     console.log("");
+  //    // const q = e.currentTarget.value;
+  //     router.push(
+  //       {
+  //         pathname: `/searchresults`,
+  //         query: some ? { some } : {},
+  //       },
+  //       undefined,
+  //       {
+  //         shallow: false,
+  //       }
+  //     );
+
+
+  //   } else{
+  //     console.log("emptuy")
+  //   }
+
+   
+  // }
+
   return (
     <div className={styles.card}>
       {/* <form onSubmit={handleEnterKey} className={styles.form}> */}
@@ -43,16 +61,10 @@ function SearchBar() {
         className={styles.input}
         //value={searchQuery}
         placeholder="Search app"
-        onKeyUp=
-        
-        {
-          
-          handleEnterKey}
-
-
-        // onChange={(e) => {
-        //   setQuery(e.target.value);
-        // }}
+        onKeyUp={handleEnterKey}
+        onChange={(e) => {
+          setQuery(e.target.value);
+        }}
         // onFocus={() => {
         //   router.push('/searchresults'
 
@@ -68,7 +80,13 @@ function SearchBar() {
       ></input>
       {/* </form> */}
 
-      <button className={styles.button}>
+      <button
+        className={styles.button}
+        onClick={(e)=>{
+          console.log(e.target.value)
+        }}
+        
+      >
         <Search />
       </button>
     </div>

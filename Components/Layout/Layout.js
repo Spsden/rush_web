@@ -42,7 +42,7 @@ export const  Layout = ({ children }) => {
         <Navbar />
 
         
-          <h1>Hyyyyy</h1>
+          
          <DisplaySection>{children}</DisplaySection>
         
       </div>

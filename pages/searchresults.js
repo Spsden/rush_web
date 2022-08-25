@@ -57,7 +57,7 @@ async function fetchData(qquery) {
 
     
     <div className= {styles.main}>
-      <h2>You Searched for {router.query.q}</h2>
+      <h1>You Searched for "{router.query.q}"</h1>
       <Grid.Container  color="white" gap={2} justify="flex-start" wrap="wrap"  >
       {res.map((val,key) => {
         return(
