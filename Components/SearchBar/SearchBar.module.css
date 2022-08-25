@@ -1,7 +1,8 @@
 .card {
 
-    width: 100%;
-    position: relative;
+    width: 50%;
+    position: absolute;
+    left:1px;
     display: flex;
     margin: 10px;
     

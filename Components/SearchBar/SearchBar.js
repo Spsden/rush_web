@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import useDebounce from "../Hooks/useDebounce";
+import Link from "next/link";
 
 function SearchBar() {
   const router = useRouter();
@@ -15,6 +16,12 @@ function SearchBar() {
       console.log("pressed");
       const q = e.currentTarget.value;
 
+      // return(
+      //   <Link href= "/searchresults" passHref>
+
+      //   </Link>
+      // )
+
       router.push(
         {
           pathname: `/searchresults`,
@@ -22,7 +29,7 @@ function SearchBar() {
         },
         undefined,
         {
-          shallow: true,
+          shallow: false,
         }
       );
     }
@@ -36,7 +43,13 @@ function SearchBar() {
         className={styles.input}
         //value={searchQuery}
         placeholder="Search app"
-        onKeyUp={handleEnterKey}
+        onKeyUp=
+        
+        {
+          
+          handleEnterKey}
+
+
         // onChange={(e) => {
         //   setQuery(e.target.value);
         // }}

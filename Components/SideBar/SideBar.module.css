@@ -1,91 +1,72 @@
 .sidebar {
+  flex: 1;
+  height:100vh;
+  position:sticky;
+  top:0;
 
-    position: fixed;
-    z-index: 10;
-    height: 100vh;
-    color: white;
-    background-color: var(--color-accent-1);
-    
-    
-    
-
-
+  background-color: var(--color-accent-1);
 }
 
+.siderow .rowblock {
+  display: flex;
+  height: 50px;
+  list-style-type: none;
 
-
-.siderow .rowblock{
-    display: flex;
-    height: 50px;
-    list-style-type: none;
-    
-    width: 90%;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    margin: 5px 0 5px 10px;
-    border-radius: 8px;
-
+  width: 90%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin: 5px 0 5px 10px;
+  border-radius: 8px;
 }
 
-.siderow .active{
-    display: flex;
-    height: 50px;
-    list-style-type: none;
-    background-color: #0070F3;
-    width: 90%;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    margin: 5px 0 5px 10px;
-    border-radius: 8px;
-    padding: 0;
-
+.siderow .active {
+  display: flex;
+  height: 50px;
+  list-style-type: none;
+  background-color: #0070f3;
+  width: 90%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin: 5px 0 5px 10px;
+  border-radius: 8px;
+  padding: 0;
 }
 
 .siderow #icon {
-    flex: 30%;
-    
-    place-items: center;
-    margin: 10px;
+  flex: 30%;
 
-
+  place-items: center;
+  margin: 10px;
 }
 
-.siderow .rowblock:hover{
-    cursor: pointer;
-    background-color:#0071f350 ;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-
+.siderow .rowblock:hover {
+  cursor: pointer;
+  background-color: #0071f350;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 .siderow #title {
-    flex: 70%;
-    
-
+  flex: 70%;
 }
 
 .rushname {
-    font-size: 30px;
-    
-    margin: 10px;
-   
-    font-weight: bold;
+  font-size: 30px;
+
+  margin: 10px;
+
+  font-weight: bold;
 }
 
+@media screen and (max-width: 1000px) {
+  .siderow #title {
+    display: none;
+  }
 
-
-@media screen and (max-width : 780px) {
-    .siderow #title{
-        display: none;
-    }
-
-    .rushname {
-
-        font-size: 10px;
-
-    }
-    
+  .rushname {
+    font-size: 10px;
+  }
 }
 
 /* .card {
@@ -94,4 +75,3 @@
     margin: 5px;
     padding: 4px;
 } */
-

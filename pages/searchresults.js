@@ -4,9 +4,11 @@ import { useRouter } from "next/router";
 import axios from "axios";
 import { Grid } from "@nextui-org/react";
 import AppCard from "../Components/AppCard/AppCard";
-
-
-export default function SearchPage(props) {
+import styles from '../styles/searchresults.module.css'
+import { Layout } from "../Components/Layout/Layout";
+import { DisplaySection } from "../Components/DisplaySection/DisplaySection";
+import { CustomLayout } from "./_app";
+function SearchPage(props) {
   const router = useRouter();
   const [res,setRes] = useState([]);
   const searchQuery = router.query.q;
@@ -16,7 +18,7 @@ export default function SearchPage(props) {
 
   //console.log(router.query.result);
 
-  async function fetchData(qquery) {
+async function fetchData(qquery) {
     const data = await axios
       .get(url, {})
       .then((response) => response.data)
@@ -40,15 +42,29 @@ export default function SearchPage(props) {
   useEffect(() => {
     // setIsLoading(true);
     fetchData();
-  }, [router.query]);
+  }, [router]);
 
   return (
-    <div>
-      <Grid.Container gap={2} justify="center" alignContent="left">
+    // <div className= {styles.cards}>
+    //   {res.map((val,key) => {
+    //     return (
+    //       <div className= {styles.card} key = {key}></div>
+    //     )
+    //   })}
+    // </div>
+
+
+
+    
+    <div className= {styles.main}>
+      <h2>You Searched for {router.query.q}</h2>
+      <Grid.Container  color="white" gap={2} justify="flex-start" wrap="wrap"  >
       {res.map((val,key) => {
         return(
-          <Grid key={key}>
+          <Grid key={key} className = {styles.grid}  >
             <AppCard  name = {val.name_and_version} icon = {val.icon_url} />
+           
+            
             
           </Grid>
         )
@@ -62,11 +78,13 @@ export default function SearchPage(props) {
   );
 }
 
-// Search.getLayout = function getLayout(page){
-//     return (
-//         <Layout>
-//             <h2>uieghciyxghiuzgc8tuyc</h2>
-//             {page}
-//         </Layout>
-//     )
+
+SearchPage.Layout = Layout
+
+export default SearchPage
+
+// SearchPage.getLayout = function getLayout(page){
+//   return (<Layout>
+//     {page}
+//   </Layout>)
 // }

@@ -31,7 +31,7 @@ export const SidebarData = [
     link: "/messeging",
   },
   {
-    title: "Media & Entertainment",
+    title: "Tv & Movies",
     icon: <PlayCircle />,
     link: "/media",
   },
