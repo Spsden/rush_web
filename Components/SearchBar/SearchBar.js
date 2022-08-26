@@ -12,24 +12,12 @@ function SearchBar() {
     setVisible(!visible);
   };
 
-  const Suggestions = PopularApps.filter(item => {
+  const Suggestions = PopularApps.filter((item) => {
     const searchQuery = query.toLowerCase();
     const entireList = item.toLowerCase();
-   
 
     return searchQuery && entireList.startsWith(searchQuery);
-  })
-
-  // useEffect(() => {
-
-  //   const closeModal = e => {
-  //     if(e.path[0] !== modalRef.current)
-  //     setVisible(false);
-  //   }
-  //   document.body.addEventListener('click',closeModal);
-
-  //   return () => document.removeEventListener('click',closeModal);
-  // },[])
+  });
 
   const handleEnterKey = (e) => {
     e.preventDefault();
@@ -82,18 +70,19 @@ function SearchBar() {
           <Search />
         </button>
       </div>
-      {Suggestions.length == 0 ? <></> :<div className={styles.suggestionsbar}>
-      {Suggestions.map((value, key) => {
-        return (
-          <div key={key} className={styles.suggestionitem} >
-            <p>{value}</p>
-          </div>
-        );
-      })}
-
-      </div>}
-      
-      
+      {Suggestions.length == 0 ? (
+        <></>
+      ) : (
+        <div className={styles.suggestionsbar}>
+          {Suggestions.map((value, key) => {
+            return (
+              <div key={key} className={styles.suggestionitem}>
+                <p>{value}</p>
+              </div>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }

@@ -6,7 +6,7 @@ import styles from "./Sidebar.module.css";
 import { SidebarData } from "./SidebarData";
 
 function Sidebar() {
-  const [current, setCurrent] = useState("/home");
+  const [current, setCurrent] = useState("/");
 
   const router = useRouter();
 

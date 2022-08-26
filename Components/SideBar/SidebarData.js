@@ -12,7 +12,7 @@ export const SidebarData = [
   {
     title: "Home",
     icon: <Home />,
-    link: "/home",
+    link: "/",
   },
   {
     title: "Web Browsers",

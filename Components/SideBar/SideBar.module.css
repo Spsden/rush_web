@@ -4,7 +4,7 @@
   position:sticky;
   top:0;
   
-  padding:20px;
+  padding:10px;
 
   background-color: var(--color-accent-1);
 }
@@ -20,7 +20,9 @@
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  margin: 5px 10px 5px 10px;
+  //margin: 5px 10px 5px 10px;
+  margin-top:5px;
+
   border-radius: 8px;
 }
 
@@ -33,9 +35,11 @@
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  margin: 5px 10px 5px 10px;
+  //margin: 5px 10px 5px 10px;
   border-radius: 8px;
   padding: 10px;
+  margin-top:5px;
+  
 }
 
 .siderow #icon {
@@ -53,6 +57,8 @@
 
 .siderow #title {
   flex: 70%;
+  text-overflow:ellipsis;
+  overflow: hidden;
 }
 
 .rushname {
@@ -70,6 +76,12 @@
 
   .rushname {
     font-size: 10px;
+  }
+
+  .siderow #icon {
+    flex: 100%;
+  
+    text-align:center;
   }
 }
 

@@ -3,20 +3,28 @@ import styles from '../styles/Home.module.css'
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-     
-
-      <main className={styles.main}>
-       
+    <div>
 
       
+        
 
-
-
-          
-      </main>
-
-     
+        <h1>Hommmme</h1>
+        <h1>Hommmme</h1>
+        <h1>Hommmme</h1>
+        <h1>Hommmme</h1>
+        <h1>Hommmme</h1>
+        <h1>Hommmme</h1>
+        <h1>Hommmme</h1>
+        <h1>Hommmme</h1>
+        <h1>Hommmme</h1>
+        <h1>Hommmme</h1>
+        <h1>Hommmme</h1>
+        <h1>Hommmme</h1>
+        <h1>Hommmme</h1>
+        <h1>Hommmme</h1>
+        <h1>Hommmme</h1>
+        <h1>Hommmme</h1>
     </div>
   )
+   
 }

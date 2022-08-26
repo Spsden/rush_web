@@ -4,6 +4,19 @@ const nextConfig = {
   swcMinify: true,
 }
 
+
+// module.exports = {
+//   async redirects() {
+//     return [
+//       {
+//         source: '/',
+//         destination: '/home',
+//         permanent: true,
+//       },
+//     ]
+//   },
+// }
+
 // next.config.js
 module.exports = {
   async headers() {

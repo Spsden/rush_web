@@ -15,16 +15,11 @@ import { DisplaySection } from '../Components/DisplaySection/DisplaySection';
 
 
 
-const Noop = ({ children }) => children
+
 
 function MyApp({ Component, pageProps }) {
 
-  const {pathname} = useRouter();
 
-
-  const useLayout = pathname.includes('/searchresults')
-  
-  console.log(useLayout);
 
   const getLayout = Component.Layout || Layout
   
