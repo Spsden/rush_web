@@ -1,7 +1,6 @@
 import styles from "./AppCard.module.css";
 import { Card, Grid, Text, Link, Button } from "@nextui-org/react";
 
-import React from "react";
 
 function AppCard(props) {
   //console.log(props.props.name_version)

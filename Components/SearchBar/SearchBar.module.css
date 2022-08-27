@@ -6,7 +6,9 @@
     display: flex;
     margin: 10px;
     flex-direction:column;
+    
     top:4px
+    
 
 
 
@@ -15,6 +17,7 @@
 .bar{
     display:flex;
     width:100%
+    
 }
 
 .suggestionsbar {
