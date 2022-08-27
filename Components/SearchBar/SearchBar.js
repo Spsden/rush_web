@@ -1,7 +1,8 @@
 import styles from "./SearchBar.module.css";
 import { Layout, Search } from "react-feather";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
+import { useState } from "react";
+import { PopularApps } from "./SearchSuggestionsData";
 
 function SearchBar() {
   const router = useRouter();
@@ -19,54 +20,42 @@ function SearchBar() {
     return searchQuery && entireList.startsWith(searchQuery);
   });
 
-  const handleEnterKey = (e) => {
+  const searchApp = (e) => {
     e.preventDefault();
 
-    if (e.key === "Enter") {
-      console.log("pressed");
-      const q = e.currentTarget.value;
-      router.push(
-        {
-          pathname: `/searchresults`,
-          query: q ? { q } : {},
-        },
-        undefined,
-        {
-          shallow: false,
-        }
-      );
-    }
+    const qry = query;
+
+    router.push(
+      {
+        pathname: `/searchresults`,
+        query: qry ? { qry } : {},
+      },
+      undefined,
+      {
+        shallow: false,
+      }
+    );
   };
 
   return (
     <div className={styles.card}>
       <div className={styles.bar}>
-        {/* <form onSubmit={handleEnterKey} className={styles.form}> */}
-        <input
-          // ref={modalRef}
-          type="search"
-          className={styles.input}
-          //value={searchQuery}
-          placeholder="Search app"
-          onKeyUp={handleEnterKey}
-          onChange={(e) => {
-            setQuery(e.target.value);
-          }}
-          onFocus={() => {
-            console.log("beep");
-            setVisible(!visible);
+        <form onSubmit={searchApp} className={styles.form}>
+          <input
+            required
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            type="search"
+            className={styles.input}
+            placeholder="Search app"
+            onFocus={() => {
+              console.log("beep");
+              setVisible(!visible);
+            }}
+          ></input>
+        </form>
 
-            // modalHandler()
-          }}
-        ></input>
-        {/* </form> */}
-
-        <button
-          className={styles.button}
-          onClick={(e) => {
-            console.log(e.target.value);
-          }}
-        >
+        <button className={styles.button} onClick={query ? searchApp : null}>
           <Search />
         </button>
       </div>
@@ -86,6 +75,5 @@ function SearchBar() {
     </div>
   );
 }
-import { PopularApps } from "./SearchSuggestionsData";
 
 export default SearchBar;

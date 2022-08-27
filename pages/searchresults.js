@@ -1,8 +1,8 @@
-import React, { useContext, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 
 import { useRouter } from "next/router";
 import axios from "axios";
-import { Grid, Loading } from "@nextui-org/react";
+import { Grid, Loading, useCurrentState } from "@nextui-org/react";
 import AppCard from "../Components/AppCard/AppCard";
 import styles from "../styles/searchresults.module.css";
 import { Layout } from "../Components/Layout/Layout";
@@ -11,17 +11,19 @@ function SearchPage(props) {
   const router = useRouter();
   const [res, setRes] = useState([]);
   const [isLoading,setLoading] = useState(false);
-  const searchQuery = router.query.q;
+  const searchQuery = router.query.qry;
+  console.log(searchQuery)
 
   const url = `https://rushy-spsden.vercel.app/rush/app/${searchQuery}`;
 
+
   //console.log(router.query.result);
 
-  async function fetchData(qquery) {
+  async function fetchData() {
     setLoading(false)
    
     const data = await axios
-      .get(url, {})
+      .get(url)
       .then((response) => response.data)
       .catch((error) => {
         if (error.response) {
@@ -70,7 +72,7 @@ const result = () => {
     return(
       <div className={styles.main}>
         
-      <h1>You Searched for "{router.query.q}"</h1>
+      <h1>You Searched for "{searchQuery}"</h1>
 
       {isLoading ? 
       <Grid.Container color="white" gap={2} justify="flex-start" wrap="wrap">
