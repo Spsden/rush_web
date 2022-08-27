@@ -49,17 +49,16 @@ function SearchBar() {
             className={styles.input}
             placeholder="Search app"
             onFocus={() => {
-              console.log("beep");
+              // console.log("beep");
               setVisible(!visible);
             }}
           ></input>
         </form>
-
         <button className={styles.button} onClick={query ? searchApp : null}>
           <Search />
         </button>
       </div>
-      {Suggestions.length == 0 ? (
+      {/* {Suggestions.length == 0 ? (
         <></>
       ) : (
         <div className={styles.suggestionsbar}>
@@ -71,7 +70,7 @@ function SearchBar() {
             );
           })}
         </div>
-      )}
+      )} */}
     </div>
   );
 }

@@ -1,13 +1,11 @@
 import { useRouter } from "next/router";
 
-
-import Sidebar from "../SideBar/Sidebar"
+import Sidebar from "../SideBar/Sidebar";
 
 import Navbar from "../Navbar/Navbar";
 
 import styles from "./Layout.module.css";
 import { DisplaySection } from "../DisplaySection/DisplaySection";
-
 
 // export default function Layout({children}) {
 //   return (
@@ -28,30 +26,17 @@ import { DisplaySection } from "../DisplaySection/DisplaySection";
 //   );
 // }
 
-
-export const  Layout = ({ children }) => {
-  const router = useRouter();
+export const Layout = ({ children }) => {
+  // const router = useRouter();
   return (
     <div className={styles.app}>
-      
-        <Sidebar />
-     
+      <Sidebar />
 
       <div className={styles.rightbar}>
-        
         <Navbar />
 
-        
-          
-         <DisplaySection>{children}</DisplaySection>
-        
+        <DisplaySection>{children}</DisplaySection>
       </div>
     </div>
-
-    
-
-
-
-   
   );
 };

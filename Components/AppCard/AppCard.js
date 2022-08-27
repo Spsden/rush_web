@@ -1,44 +1,22 @@
 import styles from "./AppCard.module.css";
-import { Card, Grid, Text, Link, Button } from "@nextui-org/react";
 
+function AppCard(value) {
+  const { name, icon, dev, span } = value.value;
 
-function AppCard(props) {
-  //console.log(props.props.name_version)
   return (
     <div className={styles.maincard}>
       <div className={styles.subcard}>
-        <img className={styles.img} alt="icon" src={props.icon} />
-
-        <div className={styles.text}>{props.name}</div>
-        
+        <img className={styles.img} alt="icon" src={icon} />
+        <p className={styles.text}>{name}</p>
+      </div>
+      <div className={styles.descCard}>
+        <p className={styles.desc}>{dev}</p>
+        <p className={styles.desc}>Date: {span}</p>
       </div>
       <div>
-        <button className={styles.button}>Add to cart</button>
+        <button className={styles.button}>Add to List</button>
       </div>
     </div>
-
-    //   <Card sm={{backgroundColor:"#974"}} css={{ p: "$6", mw: "400px", backgroundColor: "#2e3235",width:"250px" ,height:"150px"}}>
-    //   <Card.Header>
-    //     <img
-    //       alt="nextui logo"
-    //       src={props.icon}
-    //       height="34px"
-    //     />
-    //     <Grid.Container css={{ pl: "$6" }}>
-    //       <Grid xs={12}>
-    //         <Text h4 css={{ lineHeight: "$xs" ,color:"White" }}>
-    //            {props.name}
-    //         </Text>
-    //       </Grid>
-
-    //     </Grid.Container>
-    //   </Card.Header>
-
-    //   <Card.Footer>
-    //   <Button size="sm">Add to cart</Button>
-
-    //   </Card.Footer>
-    // </Card>
   );
 }
 

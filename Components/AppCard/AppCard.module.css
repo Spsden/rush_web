@@ -1,81 +1,69 @@
 .maincard {
-
-   margin-bottom:40px;
-    border-radius: 8px;
-    box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
-    padding:8px;
-    width:250px;
-    height:150px;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-   
-    
-    
-
-    
-
-    
-  
-    background-color: #2e3235;
-
-   
-   
-    
+  /* margin-bottom:10vh; */
+  border-radius: 8px;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  /* padding: 8px; */
+  width: 27vh;
+  height: 28vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  background-color: #2e3235;
 }
-.subcard{
-    display:flex;
-    flex-direction:row;
-    
+.subcard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1vh;
 }
-
-
+.descCard {
+  background-color: #191a1c;
+  margin: 0 1vh;
+  border-radius: 1vh;
+}
+.descCard p {
+  color: #959595;
+}
 
 .upper {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
-
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .img {
-    border-radius: 10px;
-    width:40px;
-    height: 40px;
-    margin: 10px;
-    
-
+  border-radius: 10px;
+  width: 8vh;
+  height: 8vh;
+  margin: 10px;
 }
 .text {
-    color: #ffffff;
-   
-    font-weight: 500;
+  color: #ffffff;
+    font-size: 2vh;
+  /* font-weight: 500; */
 
-    text-transform: capitalize;
-    margin: 0px;
-    //overflow-wrap:break-word;
-    overflow: hidden;
-    text-overflow: ellipsis;
- 
-    
+  text-transform: capitalize;
+  margin: 0px;
+  /* //overflow-wrap:break-word; */
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .button {
-    background-color: #0070F3;
-    padding: 0.8rem;
-    font-size: 14px;
-    font-weight: 700;
-    width:100%;
-    //display:block;
-    
-
-    //display: block;
-    /* width: 100%; */
-    cursor: pointer;
-    border-radius: 8px;
-    margin-right: 10px;
-    
+  background-color: #0070f3;
+  padding: 0.8rem;
+  font-size: 14px;
+  font-weight: 700;
+  width: 100%;
+  border-style: none;
+  cursor: pointer;
+  border-radius: 0px 0 8px 8px;
+  /* margin-right: 10px; */
 }
 
+.button:hover {
+  background-color: #0059be;
+  transition: all 0.2s linear;
+}
